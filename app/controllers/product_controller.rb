@@ -14,7 +14,7 @@ class ProductController < ApplicationController
 	end
 
 	def buy
-		if !signed_in?
+		if !user_signed_in?
 			flash[:danger] = "Please Login to Buy"
 			redirect_to signin_path
 

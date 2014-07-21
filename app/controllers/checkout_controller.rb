@@ -1,6 +1,6 @@
 class CheckoutController < ApplicationController
   def new
-  	if !signed_in?
+  	if !user_signed_in?
   		flash[:danger] = "Please Login to Continue"
   		redirect_to signin_path
   	else
