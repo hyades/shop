@@ -9,6 +9,16 @@ gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-sass', '>=3.0.0.0'
 gem 'bootstrap_form'
 gem 'mysql2'
+
+group :test, :development do
+  gem 'rspec-rails', '~> 3.0.0'
+end
+
+group :test do
+	gem "factory-girl-rails"
+	gem "capybara"
+	gem "guard-rspec"	
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
