@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :user1s
   get 'checkout' => 'checkout#index' , as: :checkout
   # get 'add/new'
   post 'order/store' => 'checkout#final_store'
