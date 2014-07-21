@@ -9,10 +9,6 @@ Rails.application.routes.draw do
   post 'checkout/update' => 'checkout#update', as: :update_address
   post 'add/new' => 'checkout#new'
   get 'mycart' => 'checkout#show', as: :mycart
-  resources :users
-  get 'profile' => 'users#profile', as: :profile
-  get 'orders' => 'users#orders', as: :orders
-  resources :sessions, only:[:new, :create, :destroy]
 
   root 'product#index'
 
@@ -21,9 +17,6 @@ Rails.application.routes.draw do
   
   get 'product/buy/:id' => 'product#buy'
 
-  match '/signup',  to: 'users#new',            via: 'get'
-  match '/signin',  to: 'sessions#new',         via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/remove', to: 'checkout#destroy', via: 'delete'
   match '/removefinal', to: 'checkout#destroyfinal', via: 'delete'
   # The priority is based upon order of creation: first created -> highest priority.
